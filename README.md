@@ -54,7 +54,7 @@
 首先需要为PDF文件生成结构地图：
 
 ```bash
-python VQ37HR/build_structure_map.py <pdf_path> <output_json_path>
+python pdf-table-extractor/build_structure_map.py <pdf_path> <output_json_path>
 ```
 
 ### 2. 提取表格
@@ -62,7 +62,7 @@ python VQ37HR/build_structure_map.py <pdf_path> <output_json_path>
 使用统一调度接口提取表格：
 
 ```bash
-python VQ37HR/table_extractor.py <pdf_path> <json_path> <output_dir> [options]
+python pdf-table-extractor/table_extractor.py <pdf_path> <json_path> <output_dir> [options]
 ```
 
 #### 可选参数：
@@ -79,19 +79,19 @@ python VQ37HR/table_extractor.py <pdf_path> <json_path> <output_dir> [options]
 #### Lattice表格提取：
 
 ```bash
-python VQ37HR/lattice_table.py <pdf_path> <json_path> <output_dir> [merge_tables]
+python pdf-table-extractor/lattice_table.py <pdf_path> <json_path> <output_dir> [merge_tables]
 ```
 
 #### Stream表格提取：
 
 ```bash
-python VQ37HR/stream_table.py <json_path> <output_dir>
+python pdf-table-extractor/stream_table.py <json_path> <output_dir>
 ```
 
 #### Text-only表格提取：
 
 ```bash
-python VQ37HR/text_only.py <json_path> <output_dir>
+python pdf-table-extractor/text_only.py <json_path> <output_dir>
 ```
 
 ## 输出格式
@@ -116,13 +116,13 @@ python VQ37HR/text_only.py <json_path> <output_dir>
 
 ```bash
 # 生成结构地图
-python VQ37HR/build_structure_map.py PDF/600050.pdf json/600050.json
+python pdf-table-extractor/build_structure_map.py PDF/600050.pdf json/600050.json
 
 # 提取所有类型表格
-python VQ37HR/table_extractor.py PDF/600050.pdf json/600050.json output/
+python pdf-table-extractor/table_extractor.py PDF/600050.pdf json/600050.json output/
 
 # 只提取lattice表格，不合并跨页表格
-python VQ37HR/table_extractor.py PDF/600050.pdf json/600050.json output/ --no-stream --no-text_only --no-merge-lattice
+python pdf-table-extractor/table_extractor.py PDF/600050.pdf json/600050.json output/ --no-stream --no-text_only --no-merge-lattice
 ```
 
 ## 注意事项
