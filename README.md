@@ -118,8 +118,12 @@ python pdf-table-extractor/text_only.py <json_path> <output_dir>
 # 生成结构地图
 python build_structure_map.py PDF/600050.pdf json/600050.json
 
+python build_structure_map.py PDF/600028_中国石化/2025年半年度报告摘要.pdf json/600028_中国石化/2025年半年度报告摘要.json
+
 # 提取所有类型表格
 python table_extractor.py PDF/600050.pdf json/600050.json output/
+
+python table_extractor.py PDF/600028_中国石化/2025年半年度报告摘要.pdf json/600028_中国石化/2025年半年度报告摘要.json output/
 
 # 只提取lattice表格，不合并跨页表格
 python table_extractor.py PDF/600050.pdf json/600050.json output/ --no-stream --no-text_only --no-merge-lattice
